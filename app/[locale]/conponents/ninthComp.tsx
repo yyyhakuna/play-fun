@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 interface ItemProps {
   name: string;
@@ -10,15 +12,65 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ name, imgSrc, role, content }) => {
   return (
-    <div className="rounded-[20px] bg-[#959595] opacity-85 p-6 sm:w-[300px] w-[90%] mx-auto sm:mx-0">
-      <div className="flex items-center gap-6">
-        <img src={imgSrc} alt="" className="rounded-full size-[92px]" />
-        <div className="font-bold text-[32px]">{name}</div>
-      </div>
-      <div className="bg-white w-full h-[1px] mt-3 my-4"></div>
-      <div className="font-extrabold text-5xl text-center">{role}</div>
-      <div className="font-light text-[15px] text-center">{content}</div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="rounded-[20px] bg-[#959595] opacity-85 p-6 sm:w-[300px] w-[90%] mx-auto sm:mx-0"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex items-center gap-6"
+      >
+        <motion.img
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          src={imgSrc}
+          alt=""
+          className="rounded-full size-[92px]"
+        />
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="font-bold text-[32px]"
+        >
+          {name}
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="bg-white w-full h-[1px] mt-3 my-4"
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="font-extrabold text-5xl text-center"
+      >
+        {role}
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="font-light text-[15px] text-center"
+      >
+        {content}
+      </motion.div>
+    </motion.div>
   );
 };
 

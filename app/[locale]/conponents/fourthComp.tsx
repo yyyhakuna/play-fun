@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 interface ItemProps {
   title: string;
@@ -18,31 +20,69 @@ const Item: React.FC<ItemProps> = ({
 }) => {
   const t = useTranslations("fourthComp");
   return (
-    <div className="flex gap-[53px] ">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex gap-[53px]"
+    >
       <div className="text-center mx-auto sm:mx-0">
-        <div
-          className={` text-white font-bold text-[18px] font-figtree sm:px-12 px-4 py-[12px] rounded-full `}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className={`text-white font-bold text-[18px] font-figtree sm:px-12 px-4 py-[12px] rounded-full`}
           style={{
             background: buttonColor,
           }}
         >
           {title}
-        </div>
-        <div className="text-white font-[aliba] text-[18px]">{date}</div>
-        <div className="text-white font-[aliba] text-[18px]">{t("target")}</div>
-        <div className="font-bold text-[32px] font-[aliba] text-white">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-white font-[aliba] text-[18px]"
+        >
+          {date}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-white font-[aliba] text-[18px]"
+        >
+          {t("target")}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="font-bold text-[32px] font-[aliba] text-white"
+        >
           {marketValue + "M" + t("dollar")}
-        </div>
+        </motion.div>
       </div>
       <div>
         {showArrow && (
-          <div className=" flex-col items-center justify-between h-full py-6 hidden sm:flex">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex-col items-center justify-between h-full py-6 hidden sm:flex"
+          >
             <img src="/small-arrow.svg" alt="" />
             <img src="right-arrow.png" alt="" className="size-[30px]" />
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

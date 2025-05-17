@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 interface ItemProps {
   leftContent: string;
@@ -8,11 +10,41 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ leftContent, rightContent }) => {
   return (
-    <div className="flex items-center font-[aliba] border-1 border-[#6340FF] border-solid rounded-full sm:w-[547px] w-[95%] gap-3 py-3 px-4 mx-auto sm:mx-0">
-      <div className="text-[#FFF000]  text-lg font-bold">{leftContent}</div>
-      <img src="/yellow-arrow.svg" alt="" className="" />
-      <div className="text-[15px]">{rightContent}</div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex items-center font-[aliba] border-1 border-[#6340FF] border-solid rounded-full sm:w-[547px] w-[95%] gap-3 py-3 px-4 mx-auto sm:mx-0"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-[#FFF000] text-lg font-bold"
+      >
+        {leftContent}
+      </motion.div>
+      <motion.img
+        initial={{ opacity: 0, x: 10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        src="/yellow-arrow.svg"
+        alt=""
+        className=""
+      />
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="text-[15px]"
+      >
+        {rightContent}
+      </motion.div>
+    </motion.div>
   );
 };
 

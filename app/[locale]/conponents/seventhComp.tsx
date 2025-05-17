@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 interface ItemProps {
   color: string;
@@ -9,18 +11,44 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ color, title, desc }) => {
   return (
-    <div className="flex gap-4">
-      <div
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex gap-4"
+    >
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.2 }}
         className="rounded-full size-[21px] translate-y-1"
         style={{
           backgroundColor: color,
         }}
-      ></div>
+      ></motion.div>
       <div className="text-left space-y-2">
-        <div className="font-bold text-xl"> {title}</div>
-        <div className="text-[15px]">{desc}</div>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="font-bold text-xl"
+        >
+          {title}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-[15px]"
+        >
+          {desc}
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { motion, useInView } from "framer-motion";
 
 interface ItemProps {
   bgSrc: string;
@@ -9,22 +11,45 @@ interface ItemProps {
 }
 
 const Item: React.FC<ItemProps> = ({ bgSrc, topTitle, desc, bottomTitle }) => {
-  // const t = useTranslations("secondComp");
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
       className={`bg-cover bg-center bg-no-repeat sm:w-[300px] w-[80%] sm:h-[600px] h-[600px] pt-12 px-6 mx-auto sm:mx-0`}
       style={{
         backgroundImage: `url(${bgSrc})`,
       }}
     >
-      <div className=" font-[aliba] font-bold text-2xl text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="font-[aliba] font-bold text-2xl text-white"
+      >
         {topTitle}
-      </div>
-      <div className=" font-[aliba] font-bold text-2xl text-white">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="font-[aliba] font-bold text-2xl text-white"
+      >
         {bottomTitle}
-      </div>
-      <div className=" font-[aliba] text-lg text-white pt-4">{desc}</div>
-    </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="font-[aliba] text-lg text-white pt-4"
+      >
+        {desc}
+      </motion.div>
+    </motion.div>
   );
 };
 
