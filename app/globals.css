@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: 'aliba';
+  src: url('/aliba.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-aliba: 'aliba', sans-serif;
+  --font-aliba: var(--font-aliba);
+  --font-anton: var(--font-anton);
+  --font-figtree: var(--font-figtree);
+}
+
