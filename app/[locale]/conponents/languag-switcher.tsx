@@ -14,7 +14,7 @@ const LANG_MAP = {
   },
 };
 
-interface LanguagSwitcherProps extends HTMLAttributes<HTMLDivElement> {}
+type LanguagSwitcherProps = HTMLAttributes<HTMLDivElement>;
 
 const LanguagSwitcher: React.FC<LanguagSwitcherProps> = ({ className }) => {
   const currentLamguag = useLocale();
