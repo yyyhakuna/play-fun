@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { Popover, Select, Space } from "antd";
+import { Popover } from "antd";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { MdOutlineTranslate } from "react-icons/md";

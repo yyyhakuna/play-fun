@@ -1,5 +1,5 @@
 import React from "react";
-const { useTranslations } = require("next-intl");
+import { useTranslations } from "next-intl";
 
 interface ItemProps {
   color: string;

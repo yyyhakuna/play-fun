@@ -9,7 +9,6 @@ interface ItemProps {
 }
 
 const Item: React.FC<ItemProps> = ({ title, content, index, borderImg }) => {
-  const t = useTranslations("fifthComp");
   const width =
     index === 0 ? "w-[211px]" : index === 1 ? "w-[280px]" : "w-[357px]";
   const height =
