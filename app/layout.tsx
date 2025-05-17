@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description: "Moneda V",
 };
 
-export const anton = Anton({
+const anton = Anton({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-anton",
 });
 
-export const figtree = Figtree({
+const figtree = Figtree({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin", "latin-ext"],
   variable: "--font-figtree",
