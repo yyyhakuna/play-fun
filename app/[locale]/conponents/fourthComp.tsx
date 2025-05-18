@@ -5,20 +5,21 @@ import { motion } from "framer-motion";
 
 interface ItemProps {
   title: string;
-  date: string;
-  marketValue: string;
+  topDesc: string;
+  bottomDesc: string;
+  content: string;
   showArrow: boolean;
   buttonColor: string;
 }
 
 const Item: React.FC<ItemProps> = ({
   title,
-  date,
-  marketValue,
+  topDesc,
+  content,
+  bottomDesc,
   showArrow,
   buttonColor,
 }) => {
-  const t = useTranslations("fourthComp");
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,18 +46,18 @@ const Item: React.FC<ItemProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-white font-[aliba] text-[18px]"
+          className="text-white font-[aliba] text-[18px] mt-2"
         >
-          {date}
+          {topDesc}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-white font-[aliba] text-[18px]"
+          className="text-white font-[aliba] text-[18px] mb-[6px]"
         >
-          {t("target")}
+          {bottomDesc}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -65,7 +66,7 @@ const Item: React.FC<ItemProps> = ({
           transition={{ duration: 0.5, delay: 0.4 }}
           className="font-bold text-[32px] font-[aliba] text-white"
         >
-          {marketValue + "M" + t("dollar")}
+          {content}
         </motion.div>
       </div>
       <div>
@@ -91,23 +92,30 @@ const FourthComp = () => {
   const items: ItemProps[] = [
     {
       title: t("itemTitle1"),
-      date: "（5/12 - 5/17）",
-      marketValue: "10",
+      topDesc: t("item1TopDesc"),
+      content: t("item1Content"),
+      bottomDesc: t("item1BottomDesc"),
+      // marketValue: "10",
       showArrow: true,
       buttonColor: "#198Cff",
     },
     {
       title: t("itemTitle2"),
-      date: "（5/18 - 5/23）",
-      marketValue: "20",
+      topDesc: t("item2TopDesc"),
+      content: t("item2Content"),
+      // marketValue: "20",
+      bottomDesc: t("item2BottomDesc"),
       showArrow: true,
       buttonColor: "#8544ee",
     },
     {
       title: t("itemTitle3"),
-      date: "（5/24 - 5/29）",
-      marketValue: "30",
+      topDesc: t("item3TopDesc"),
+      content: t("item3Content"),
+      bottomDesc: t("item3BottomDesc"),
+      // marketValue: "30",
       showArrow: false,
+
       buttonColor: "#df4e23",
     },
   ];
@@ -132,9 +140,10 @@ const FourthComp = () => {
               <Item
                 key={index}
                 title={item.title}
-                date={item.date}
-                marketValue={item.marketValue}
+                topDesc={item.topDesc}
+                content={item.content}
                 showArrow={item.showArrow}
+                bottomDesc={item.bottomDesc}
                 buttonColor={item.buttonColor}
               />
             ))}

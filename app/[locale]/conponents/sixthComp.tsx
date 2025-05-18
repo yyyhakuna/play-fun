@@ -86,7 +86,7 @@ const SixthComp = () => {
       <div className="font-bold text-3xl font-[aliba] text-[#FFF600] mt-[17px] mb-[26px] ">
         {t("desc")}
       </div>
-      <div className="text-[#d8d8d8] text-lg font-bold font-[alba] ">
+      {/* <div className="text-[#d8d8d8] text-lg font-bold font-[alba] ">
         <span>{t("content1")}</span>
         <span className="font-bold text-[44px] px-2">1.5</span>
         <span>%</span>
@@ -97,7 +97,7 @@ const SixthComp = () => {
         <span>{t("tax")}</span>
         <span> · </span>
         <span>{t("enter")}</span>
-      </div>
+      </div> */}
       <div className="sm:flex justify-center items-stretch gap-5 mt-6 sm:mt-0 space-y-6 sm:space-y-0">
         <div className="bg-[#303438] text-white font-[aliba] opacity-70 py-[37px] sm:px-[100px] px-4 rounded-2xl">
           <div className="text-3xl">{t("leftTitle")}</div>
