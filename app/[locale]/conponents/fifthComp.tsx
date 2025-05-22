@@ -138,7 +138,7 @@ const FifthComp = () => {
           />
         ))}
       </div>
-      <div className="text-white font-[aliba] text-[15px] mt-10">
+      <div className="text-white font-[aliba] text-[15px] mt-10 px-10 sm:px-0">
         {t("bottomContent")}
       </div>
     </div>

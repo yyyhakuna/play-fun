@@ -105,7 +105,7 @@ const SeventhComp = () => {
       />
       <div className="font-bold text-[44px]">{t("title")}</div>
       <div className="text-[18px]">{t("desc")}</div>
-      <div className="sm:flex justify-center items-center mt-[77px]">
+      <div className="sm:flex justify-center items-center mt-[77px] space-y-15 sm:space-y-0 gap-30">
         <div className="space-y-7">
           {items.map((item, index) => (
             <Item

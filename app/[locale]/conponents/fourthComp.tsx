@@ -26,7 +26,7 @@ const Item: React.FC<ItemProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="flex gap-[53px]"
+      className="flex gap-[53px] translate-x-6 sm:translate-x-0"
     >
       <div className="text-center mx-auto sm:mx-0">
         <motion.div
@@ -127,7 +127,7 @@ const FourthComp = () => {
         className="absolute sm:h-[500px] h-[200px] left-1/2 translate-x-[-50%]"
       />
 
-      <div className="text-white font-[aliba] font-bold text-5xl text-center">
+      <div className="text-white font-[aliba] font-bold sm:text-5xl text-4xl text-center">
         {t("title")}
       </div>
       <div className="sm:flex gap-[10px] justify-center space-y-4 sm:space-y-0">

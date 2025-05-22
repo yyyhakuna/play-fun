@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const ThirdComp = () => {
   const t = useTranslations("thirdComp");
   return (
-    <div className="bg-gradient-to-tl from-[#1d253b] via-[#151729] to-black sm:pt-30 sm:pb-10 pt-20 px-6 sm:px-0">
+    <div className="bg-gradient-to-tl from-[#1d253b] via-[#151729] to-black sm:pt-30 sm:pb-10 py-20 px-6 sm:px-0">
       <div className="max-w-[800px] mx-auto text-center ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

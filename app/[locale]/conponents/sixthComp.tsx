@@ -78,12 +78,12 @@ const SixthComp = () => {
       <img
         src="/sixComp-bg.png"
         alt=""
-        className="absolute sm:h-[300px] h-[200px] top-[50px] right-0 bottom-[100px]"
+        className="absolute sm:h-[300px] h-[100px] top-[50px] right-0 bottom-[100px]"
       />
-      <div className="text-5xl font-bold font-[aliba] text-white ">
+      <div className="sm:text-5xl text-4xl font-bold font-[aliba] text-white ">
         {t("title")}
       </div>
-      <div className="font-bold text-3xl font-[aliba] text-[#FFF600] mt-[17px] mb-[26px] ">
+      <div className="font-bold sm:text-3xl font-[aliba] text-[#FFF600] mt-[17px] mb-[26px] text-2xl">
         {t("desc")}
       </div>
       {/* <div className="text-[#d8d8d8] text-lg font-bold font-[alba] ">

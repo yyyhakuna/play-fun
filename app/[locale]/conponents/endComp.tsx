@@ -64,9 +64,9 @@ const TopComp = () => {
           </div>
         ))}
       </div>
-      <div className="space-y-5">
+      <div className="space-y-5 mt-12 sm:mt-0">
         <div className="font-bold text-lg">{t("newest")}</div>
-        <div className="flex">
+        <div className="flex ">
           <div className="bg-black pl-5 py-3 rounded-l-[8px] w-[220px]">
             您的邮箱地址
           </div>
